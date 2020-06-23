@@ -1,32 +1,32 @@
 
 
 ## usersテーブル
+
 |Column|Type|Options|
 |------|----|-------|
+|user_id|integer|null: false|
 |name|string|null: false|
 |email|string|null: false|
 |encrypted_password|string|null: false|
-|group_id|integer|
 
-has_many:messages, through: :groups
+has_many:messages
 has_many:groups
 
-## groupsテーブル
+## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
-
-belong_to:user
-belong_to:message
+|group_id|integer|null: false|
+|group_name|string|null: false|
+|group_member|integer|null: false, foreign_key: true|
+has_many:users
+has_many:groups
 
 ## messageテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text|
-|image|string|
+|body|text|null: false|
+|image|string|null: false|
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
-
-belong_to:user
-belong_to:group
+belong_to:users
+belong_to:groups
