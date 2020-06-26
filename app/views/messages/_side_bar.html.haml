@@ -1,6 +1,20 @@
 .Sideber
-  test
-  .Sideber__user
-    test2
+  .Sideber__header
+    .Sideber__header__user
+      .Sideber__header__user--name
+        masa
+      .Sideber__header__user--menu
+      = link_to "#", class: "new-group" do
+        = icon('far', 'edit',class: "Sideber__header__user--menu--icon1")
+        %spam<>
+      = link_to "#", class: "edit-user" do
+        = icon('fas', 'cog',class: "Sideber__header__user--menu--icon2")
+        %spam<>
   .Sideber__group
-    足すと
+    .Sideber__group__box
+      .Sideber__group__box--name
+        techcamp
+      .Sideber__group__box--message
+        まだメッセージがありません
+
+    
