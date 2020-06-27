@@ -2,12 +2,12 @@
   .Sideber__header
     .Sideber__header__user
       .Sideber__header__user--name
-        masa
+        = current_user.name
       .Sideber__header__user--menu
       = link_to "#", class: "new-group" do
         = icon('far', 'edit',class: "Sideber__header__user--menu--icon1")
         %spam<>
-      = link_to "#", class: "edit-user" do
+      = link_to edit_user_path(current_user) do
         = icon('fas', 'cog',class: "Sideber__header__user--menu--icon2")
         %spam<>
   .Sideber__group
